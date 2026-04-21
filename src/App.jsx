@@ -10,31 +10,64 @@ export default function App() {
     resume: "/luis-portfolio-1/resume.pdf",
   };
 
+  const experience = [
+    {
+      role: "Data Analyst",
+      org: "STEM Center USA",
+      date: "October 2024 - Present",
+      bullets: [
+        "Built and maintained scalable datasets and evaluation pipelines across STEM programs.",
+        "Designed ETL workflows for cleaning, validation, and transformation of large datasets.",
+        "Conducted statistical analysis to measure student outcomes and program effectiveness.",
+      ],
+    },
+    {
+      role: "Data Evaluation Intern",
+      org: "Mid-Atlantic Equity Consortium (MAEC)",
+      date: "November 2024 - July 2025",
+      bullets: [
+        "Developed automated reporting workflows and dashboards for statewide data analysis.",
+        "Analyzed large survey datasets to support equity-focused evaluation initiatives.",
+        "Managed data integration, cleaning, and QA for multi-source datasets.",
+      ],
+    },
+    {
+      role: "Data Analyst",
+      org: "EVITARUS",
+      date: "October 2021 - September 2022",
+      bullets: [
+        "Analyzed datasets using R and statistical techniques to generate insights for research projects.",
+        "Improved data workflows for consistency and efficiency across multiple studies.",
+        "Supported survey design, data cleaning, and reporting processes.",
+      ],
+    },
+  ];
+
+  const additionalExperience = [
+    "Certified Substitute Teacher - CVUSD",
+    "STEM Instructor - Migrant Education Program",
+    "English Instructor - Global English Camp (Japan)",
+  ];
+
   const featuredProjects = [
     {
       name: "MEFENA – Statewide Family Needs Assessment (MAEC)",
       description:
-        "Led quantitative analysis and visualization for a statewide equity assessment, producing charts, maps, and narrative findings used to inform family engagement strategy and statewide equity efforts.",
-      tech: ["R", "ArcGIS", "Data Visualization", "Statistical Analysis"],
+        "Led quantitative analysis and visualization for a statewide equity assessment, producing ArcGIS StoryMaps used to inform policy and resource allocation.",
+      tech: ["R", "ArcGIS", "Data Visualization"],
       link: "https://storymaps.arcgis.com/stories/2f23b76e6534481cbb1013b96a2b544e",
     },
     {
-      name: "STEM Learning Outcomes Analysis (2020-2024)",
+      name: "STEM Learning Outcomes Analysis",
       description:
-        "Built a unified multi-year dataset across STEM programs, conducted statistical testing, and produced reports that measured learning growth and informed curriculum and evaluation improvements.",
-      tech: ["R", "Statistics", "Data Engineering", "Visualization"],
+        "Built a multi-year dataset and conducted statistical testing to measure student learning outcomes and improve program design.",
+      tech: ["R", "Statistics", "Data Analysis"],
     },
     {
-      name: "TELPAS Data Quality & Performance Analysis",
+      name: "TELPAS Analysis",
       description:
-        "Cleaned and validated a large district-level dataset, identified anomalies, and produced analysis supporting equity-focused reporting on English learner outcomes.",
-      tech: ["R", "Data Cleaning", "Statistical Analysis"],
-    },
-    {
-      name: "Survey Optimization Pipeline (Evitarus)",
-      description:
-        "Designed a respondent deduplication and outreach optimization pipeline that improved survey efficiency and reduced duplicate contact across projects.",
-      tech: ["R", "Data Engineering", "ETL"],
+        "Cleaned and analyzed district-level data to identify patterns in English learner performance.",
+      tech: ["R", "Data Cleaning"],
     },
   ];
 
@@ -42,41 +75,35 @@ export default function App() {
     {
       name: "LC4 Assembler",
       description:
-        "Implemented a two-pass assembler in C to translate assembly code into machine instructions. Focused on parsing, file I/O, dynamic memory management, and low-level systems logic.",
-      tech: ["C", "Systems Programming", "Memory Management", "File I/O"],
+        "Implemented a two-pass assembler in C with parsing, file I/O, and memory management.",
+      tech: ["C", "Systems Programming"],
     },
     {
       name: "Game of Nim",
       description:
-        "Built a complete playable version of the Game of Nim in C++ with modular structure, input validation, algorithmic game logic, and both easy and optimal-strategy computer modes.",
-      tech: ["C++", "Algorithms", "Game Logic"],
+        "Built a C++ strategy game with optimal algorithmic logic and multiple difficulty modes.",
+      tech: ["C++", "Algorithms"],
     },
     {
-      name: "Student Management System",
+      name: "Java Project Suite",
       description:
-        "Built a CRUD-style Java application for managing student records with modular components for storing, retrieving, and updating data.",
-      tech: ["Java", "OOP", "CRUD"],
-    },
-    {
-      name: "Object-Oriented Java Project Suite",
-      description:
-        "Developed multiple Java applications during my first MCIT semester, including Battleship, RPG-style games, Movie Trivia, a library catalog system, and simulation-based applications. Strengthened object-oriented programming and application design skills.",
-      tech: ["Java", "OOP", "Application Development"],
+        "Developed multiple Java applications including Battleship, RPG games, and data systems using object-oriented programming.",
+      tech: ["Java", "OOP"],
     },
   ];
 
   const researchProjects = [
     {
-      name: "UCLA Honors Thesis – Political Behavior & Public Opinion",
+      name: "UCLA Honors Thesis",
       description:
-        "Conducted an independent honors thesis combining geospatial analysis, election data, census variables, and statistical modeling to study voter access and political participation.",
-      tech: ["R", "ArcGIS", "Statistical Modeling", "Research Design"],
+        "Conducted geospatial and statistical analysis to study voter access and turnout.",
+      tech: ["R", "ArcGIS"],
     },
     {
-      name: "Public Opinion on Nuclear Policy in Japan and U.S. Security Commitments",
+      name: "Japan Nuclear Policy Study",
       description:
-        "Analyzed public opinion data using quantitative methods to study how attitudes toward nuclear weapons influence support for international disarmament policy.",
-      tech: ["R", "Data Analysis", "Visualization", "Political Research"],
+        "Analyzed public opinion data to study attitudes toward nuclear policy and international agreements.",
+      tech: ["R", "Statistical Modeling"],
     },
   ];
 
@@ -88,28 +115,20 @@ export default function App() {
     "R",
     "SQL",
     "Git",
-    "GitHub",
     "React",
-    "Pandas",
-    "NumPy",
-    "Matplotlib",
     "Tableau",
     "ArcGIS",
-    "ETL Pipelines",
     "Data Analysis",
     "Statistical Modeling",
-    "Object-Oriented Programming",
-    "Debugging",
-    "Testing",
   ];
 
   return (
     <div style={pageStyle}>
       <div style={containerStyle}>
-        
+
         {/* HERO */}
         <section style={card}>
-          <h1 style={{ fontSize: "48px" }}>{profile.name}</h1>
+          <h1>{profile.name}</h1>
           <h2>{profile.title}</h2>
           <p>{profile.location} | {profile.email}</p>
 
@@ -125,9 +144,9 @@ export default function App() {
         <section style={card}>
           <h2>About Me</h2>
           <p>
-            My work spans data analytics, software development, and applied research across education,
-            public policy, and STEM programs. I focus on building systems, analyzing data, and translating
-            technical work into actionable insights.
+            I combine data analysis, software engineering, and research to solve real-world problems.
+            My work spans education, policy, and technology, with a focus on building systems and
+            generating insights from complex data.
           </p>
         </section>
 
@@ -139,16 +158,45 @@ export default function App() {
           </div>
         </section>
 
-        <ProjectSection title="Featured Data & Evaluation Projects" projects={featuredProjects} />
+        {/* EXPERIENCE */}
+        <ExperienceSection experience={experience} />
+
+        {/* ADDITIONAL EXPERIENCE */}
+        <section style={card}>
+          <h2>Additional Experience</h2>
+          <ul>
+            {additionalExperience.map((e) => <li key={e}>{e}</li>)}
+          </ul>
+        </section>
+
+        {/* PROJECTS */}
+        <ProjectSection title="Featured Projects" projects={featuredProjects} />
         <ProjectSection title="Software Engineering Projects" projects={softwareProjects} />
-        <ProjectSection title="Research & Academic Projects" projects={researchProjects} />
+        <ProjectSection title="Research Projects" projects={researchProjects} />
 
       </div>
     </div>
   );
 }
 
-/* COMPONENT */
+/* COMPONENTS */
+
+function ExperienceSection({ experience }) {
+  return (
+    <section style={card}>
+      <h2>Experience</h2>
+      {experience.map((job) => (
+        <div key={job.role} style={projectCard}>
+          <h3>{job.role}</h3>
+          <p><strong>{job.org}</strong> - {job.date}</p>
+          <ul>
+            {job.bullets.map((b) => <li key={b}>{b}</li>)}
+          </ul>
+        </div>
+      ))}
+    </section>
+  );
+}
 
 function ProjectSection({ title, projects }) {
   return (
@@ -174,7 +222,6 @@ function ProjectSection({ title, projects }) {
 /* STYLES */
 
 const pageStyle = { background: "#f8fafc", minHeight: "100vh" };
-
 const containerStyle = { maxWidth: "1000px", margin: "auto", padding: "40px" };
 
 const card = {
@@ -192,7 +239,7 @@ const projectCard = {
   marginBottom: "15px",
 };
 
-const buttonContainer = { marginTop: "15px", display: "flex", gap: "10px", flexWrap: "wrap" };
+const buttonContainer = { display: "flex", gap: "10px", flexWrap: "wrap" };
 
 const buttonDark = {
   background: "#0f172a",
