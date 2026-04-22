@@ -49,7 +49,7 @@ export default function App() {
     images: [
       "/luis-portfolio-1/stem/overall.png",
       "/luis-portfolio-1/stem/scores.png",
-      "/luis-portfolio-1/stem/college.png",
+      "/luis-portfolio-1/stem/college.jpg",
       "/luis-portfolio-1/stem/ungrouped.png",
     ],
     reports: [
