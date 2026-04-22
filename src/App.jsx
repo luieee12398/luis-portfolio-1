@@ -61,15 +61,15 @@ function HomePage() {
           <div style={heroRight}>
             <div style={heroStatCard}>
               <div style={heroStatLabel}>Focus Areas</div>
-              <div style={heroStatValue}>Data + SWE + Research</div>
+              <div style={heroStatValue}>Software, Data, Research</div>
             </div>
             <div style={heroStatCard}>
               <div style={heroStatLabel}>Current Goal</div>
-              <div style={heroStatValue}>SWE / Data Science Roles</div>
+              <div style={heroStatValue}>SWE + Data Science Roles</div>
             </div>
             <div style={heroStatCard}>
               <div style={heroStatLabel}>Strength</div>
-              <div style={heroStatValue}>Technical + Applied Impact</div>
+              <div style={heroStatValue}>Technical Work with Real-World Impact</div>
             </div>
           </div>
         </section>
@@ -77,7 +77,7 @@ function HomePage() {
         <section id="about" style={sectionCard}>
           <SectionHeading
             title="About"
-            subtitle="A technical portfolio built around applied analytics, software foundations, and public-impact research."
+            subtitle="A portfolio built around applied analytics, technical problem-solving, and software growth."
           />
           <p style={bodyText}>
             My background combines data analysis, software development, and research
@@ -92,6 +92,36 @@ function HomePage() {
             messy data, and communicate findings clearly to both technical and
             non-technical audiences.
           </p>
+        </section>
+
+        <section id="currently-building" style={sectionCard}>
+          <SectionHeading
+            title="Currently Building"
+            subtitle="What I’m actively learning, expanding, and preparing for right now."
+          />
+          <div style={buildingGrid}>
+            <div style={buildingCard}>
+              <h3 style={buildingTitle}>Software Foundations</h3>
+              <p style={bodyText}>
+                Expanding my computer science foundation through MCIT coursework in
+                Java, systems, and software design.
+              </p>
+            </div>
+            <div style={buildingCard}>
+              <h3 style={buildingTitle}>Portfolio Expansion</h3>
+              <p style={bodyText}>
+                Converting coursework and applied projects into structured case-study
+                pages with clearer technical summaries and outputs.
+              </p>
+            </div>
+            <div style={buildingCard}>
+              <h3 style={buildingTitle}>Internship Preparation</h3>
+              <p style={bodyText}>
+                Preparing for SWE, data science, and technical analytics internships
+                by strengthening coding, systems thinking, and project presentation.
+              </p>
+            </div>
+          </div>
         </section>
 
         <section id="skills" style={sectionCard}>
@@ -142,7 +172,7 @@ function HomePage() {
         <section id="additional" style={sectionCard}>
           <SectionHeading
             title="Additional Experience"
-            subtitle="Selected teaching and academic roles that strengthen communication, instructional design, and research experience."
+            subtitle="Selected teaching and academic roles that reinforce communication, instruction, and research skills."
           />
           <div style={additionalGrid}>
             {additionalExperience.map((e) => (
@@ -174,6 +204,35 @@ function HomePage() {
           projects={researchProjects}
         />
 
+        {/*
+        <section id="github-links" style={sectionCard}>
+          <SectionHeading
+            title="Code Repositories"
+            subtitle="Selective public code links can live here as you decide what you’re comfortable sharing."
+          />
+          <div style={repoGrid}>
+            <div style={repoCard}>
+              <h3 style={repoTitle}>Game of Nim</h3>
+              <p style={repoText}>
+                Add a GitHub repo link later if you decide you can share the code publicly.
+              </p>
+            </div>
+            <div style={repoCard}>
+              <h3 style={repoTitle}>Java Project Suite</h3>
+              <p style={repoText}>
+                This can stay summary-only for now, then expand later with repo links or screenshots if appropriate.
+              </p>
+            </div>
+            <div style={repoCard}>
+              <h3 style={repoTitle}>Future Public Projects</h3>
+              <p style={repoText}>
+                Great place for any original SWE or data projects you want recruiters to open directly.
+              </p>
+            </div>
+          </div>
+        </section>
+        */}
+
         <section id="contact" style={footerCard}>
           <SectionHeading
             title="Contact"
@@ -190,7 +249,7 @@ function HomePage() {
             </a>
             <a href={profile.github} target="_blank" rel="noreferrer" style={contactItem}>
               <strong>GitHub</strong>
-              <span>See code and repos</span>
+              <span>See repositories</span>
             </a>
             <a href={profile.resume} target="_blank" rel="noreferrer" style={contactItem}>
               <strong>Resume</strong>
@@ -198,9 +257,7 @@ function HomePage() {
             </a>
           </div>
 
-          <p style={footerNote}>
-            Built with React and GitHub Pages.
-          </p>
+          <p style={footerNote}>Built with React and GitHub Pages.</p>
         </section>
       </div>
     </div>
@@ -584,6 +641,7 @@ const navInner = {
   justifyContent: "space-between",
   alignItems: "center",
   gap: "20px",
+  flexWrap: "wrap",
 };
 
 const brand = {
@@ -609,12 +667,12 @@ const navLink = {
 const container = {
   maxWidth: "1120px",
   margin: "0 auto",
-  padding: "28px 24px 48px",
+  padding: "28px 16px 48px",
 };
 
 const heroSection = {
   display: "grid",
-  gridTemplateColumns: "1.6fr 0.9fr",
+  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
   gap: "20px",
   background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
   padding: "34px",
@@ -702,6 +760,25 @@ const sectionSubtitle = {
   lineHeight: 1.6,
 };
 
+const buildingGrid = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gap: "14px",
+};
+
+const buildingCard = {
+  border: "1px solid #e2e8f0",
+  borderRadius: "18px",
+  padding: "18px",
+  background: "#ffffff",
+};
+
+const buildingTitle = {
+  marginTop: 0,
+  marginBottom: "10px",
+  fontSize: "20px",
+};
+
 const projectGrid = {
   display: "grid",
   gap: "16px",
@@ -775,8 +852,33 @@ const additionalCard = {
   lineHeight: 1.5,
 };
 
+const repoGrid = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gap: "12px",
+};
+
+const repoCard = {
+  border: "1px solid #e2e8f0",
+  borderRadius: "16px",
+  padding: "16px",
+  background: "#ffffff",
+};
+
+const repoTitle = {
+  marginTop: 0,
+  marginBottom: "8px",
+  fontSize: "18px",
+};
+
+const repoText = {
+  margin: 0,
+  color: "#475569",
+  lineHeight: 1.6,
+};
+
 const heroName = {
-  fontSize: "50px",
+  fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
   lineHeight: 1.05,
   margin: "0 0 10px 0",
 };
@@ -784,7 +886,7 @@ const heroName = {
 const heroTitle = {
   margin: "0 0 12px 0",
   color: "#334155",
-  fontSize: "24px",
+  fontSize: "clamp(1.1rem, 2.4vw, 1.5rem)",
   lineHeight: 1.25,
 };
 
@@ -827,7 +929,7 @@ const detailHero = {
 const detailTitle = {
   marginTop: 0,
   marginBottom: "8px",
-  fontSize: "38px",
+  fontSize: "clamp(2rem, 4vw, 2.6rem)",
   lineHeight: 1.12,
 };
 
